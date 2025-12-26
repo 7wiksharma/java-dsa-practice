@@ -1,0 +1,66 @@
+@REC-01 
+
+Write a Java program to check whether a given string is a palindrome using recursion.
+
+A palindrome is a string that reads the same forward and backward.
+
+Examples
+Input	Output
+"abba"	true
+"madam"	true
+"abc"	false
+"" (empty string)	true
+ Approach (Recursive Two-Pointer Technique)
+
+We use two pointers:
+
+l → starting index
+
+r → ending index
+
+Steps:
+
+Base Case
+
+If l >= r, all characters are checked → return true
+
+Mismatch Case
+
+If s.charAt(l) != s.charAt(r) → return false
+
+Recursive Case
+
+Move inward:
+
+isPalindrome(s, l + 1, r - 1)
+
+
+
+CODE : 
+// string is palindrome is or  ot using recursion 
+import java.util.*;
+public class Main
+{
+    public static boolean ispalindrome(String s , int l , int r )
+    {
+      
+      if(l>=r)
+      {
+          return true ;
+      }
+      if(s.charAt(l)!=s.charAt(r))
+      return false;
+     return ispalindrome(s,l+1,r-1);
+    }
+   public static boolean callingfunction(String s , int l , int r)
+   {
+      return ispalindrome(s,0 , s.length()-1);
+   }
+	public static void main(String[] args) {
+	//	System.out.println("Hello World");
+	String s = "";
+	int r = s.length();
+	boolean ans = callingfunction(s ,0, r);
+	System.out.println(ans);
+	}
+}
