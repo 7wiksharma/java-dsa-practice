@@ -1,0 +1,23 @@
+
+
+
+nth fibo number using rec ........
+//fibonaci nth series by recustion
+//(0, 1, 1, 2, 3, 5, 8, 13
+public class Main
+{
+    public static int printfibo(int n)
+    {
+        if(n <=1)
+        {
+          return n;
+        }
+        return printfibo(n-1) + printfibo(n-2);
+    }
+	public static void main(String[] args) {
+		
+		int n =5;
+		int ans = printfibo(n);
+		System.out.println(ans);
+	}
+}
