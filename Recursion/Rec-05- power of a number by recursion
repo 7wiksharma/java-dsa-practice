@@ -1,0 +1,21 @@
+@ Rec -05
+
+#calculating the power of a number using recursion 
+//for simplicity we assume that number is >0 ... ie number is postive only 
+public class Main
+{
+    public static int calculatepow(int base , int exp)
+    {
+        if(exp==0)
+        return 1;
+        return base * calculatepow(base , exp-1);
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		int base = 3;
+		int exp = 2;  // 3*3 = 9;
+		int ans = calculatepow(base , exp);
+		System.out.print(ans);
+		
+	}
+}
