@@ -1,0 +1,23 @@
+Rec-06
+// reverse a string using recursion
+
+public class Main
+{
+    public static String revstr(String s , int len)
+    {
+        if(len<1)
+        return "";
+        if(len==1)
+        {
+            return String.valueOf(s.charAt(0));
+        }
+        return s.charAt(len-1) + revstr(s, len-1);
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		String s = "i love india ";
+		int len = s.length();
+		String ans = revstr(s, len);
+		System.out.print(ans);
+	}
+}
