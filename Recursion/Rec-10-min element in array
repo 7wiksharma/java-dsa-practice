@@ -1,0 +1,17 @@
+public class Main
+{
+    //Find minimum element in an array using recursion
+    public static int min(int arr[], int n)
+    {
+        if(n==1)
+        return arr[0];
+        int minofrest = min(arr,n-1);
+        return  Math.min(arr[n-1],minofrest);
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		int [] arr={4, 2, 7, 1, 9};
+		int res = min(arr,5);
+		System.out.print(res);
+	}
+}
