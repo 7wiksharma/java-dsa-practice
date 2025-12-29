@@ -1,0 +1,19 @@
+@rec-08
+//Sum of digits of a number
+public class Main
+{
+    public static int sumofdigit(int x)    //123 -> 6
+    {
+      if(x==0)
+      {
+          return  0;
+      }
+      return x%10 + sumofdigit(x/10);
+    }
+	public static void main(String[] args) {
+	//	System.out.println("Hello World");
+	
+	int ans = sumofdigit(123);
+	System.out.println(ans);
+	}
+}
