@@ -1,0 +1,34 @@
+
+//leetcode easy 
+//leetcode 28
+
+
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int l1 = haystack.length();
+        int l2 = needle.length();
+        if(l2>l1)
+        return -1;
+        int i = 0; // haystack
+        int j =0; // needle
+       while(i<l1)
+        {
+             if(haystack.charAt(i)==needle.charAt(j))
+              {
+                i++;
+                j++;
+                if(j==l2)
+                return i-j;
+              }
+      else if(haystack.charAt(i)!=needle.charAt(j))
+      {
+        i=i-j+1;
+        j=0;
+      }
+      
+    
+    }
+    
+         return  -1;
+}
+}
