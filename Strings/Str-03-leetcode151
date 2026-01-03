@@ -1,0 +1,37 @@
+//leetcode 151
+/*Example 1:
+
+Input: s = "the sky is blue"
+Output: "blue is sky the"
+*/
+
+class Solution {
+    public String reverseWords(String s) {
+        Stack<String> stack = new Stack<>();
+        String str = "";
+        s += " "; 
+
+       
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                if (!str.isEmpty()) { 
+                    stack.push(str);
+                    str = ""; 
+                }
+            } else {
+                str += s.charAt(i); 
+            }
+        }
+
+       
+        String ans = "";
+        while (!stack.isEmpty()) {
+            ans += stack.pop();
+            if (!stack.isEmpty()) {
+                ans += " "; 
+            }
+        }
+
+        return ans;
+    }
+}
