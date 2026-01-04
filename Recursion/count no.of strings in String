@@ -1,0 +1,20 @@
+
+public class Main
+{
+    // using recursion
+    public static int  count(String s , int i)
+    {
+       // int cnt=0;
+         if(i==s.length())
+         return 0;
+         if(s.charAt(i)==' '){
+         return count(s,i+1);
+         }
+         return 1 + count(s, i+1);
+    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		int ans = count("satwik sharma",0);
+		System.out.println(ans);
+	}
+}
