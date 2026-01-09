@@ -1,0 +1,29 @@
+
+import java.util.*;
+public class Main
+{
+    public static int FX(String s)
+    {
+         HashSet<Character> seen = new HashSet<>();
+         int r =0;
+         int l =0;
+         int max =0;
+         while(r<s.length())
+         {
+             if(seen.add(s.charAt(r)))
+             {
+                 max = Math.max(max,r-l+1);
+                 r++;
+             }
+             else {
+                 seen.remove(s.charAt(l));
+                 l++;
+             }
+         }
+         return max;
+    }
+	public static void main(String[] args) {
+	//	System.out.println("Hello World");
+	System.out.print(FX("pwwkew"));
+	}
+}
