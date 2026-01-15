@@ -1,0 +1,38 @@
+You are given the two integers, n and m and two integer arrays, hBars and vBars. The grid has n + 2 horizontal and m + 2 vertical bars, creating 1 x 1 unit cells. The bars are indexed starting from 1.
+
+You can remove some of the bars in hBars from horizontal bars and some of the bars in vBars from vertical bars. Note that other bars are fixed and cannot be removed.
+
+Return an integer denoting the maximum area of a square-shaped hole in the grid, after removing some bars (possibly none).
+
+ 
+
+
+class Solution {
+    public int maximizeSquareHoleArea(int n, int m, int[] hBars, int[] vBars) {
+       Arrays.sort(hBars);
+       Arrays.sort(vBars);
+       //consicutive
+       int hbar_cnt=1;
+       int vbar_cnt =1;
+       int hcurr=1;
+       for(int i =1 ; i<hBars.length;i++)
+       {
+        if(hBars[i]-hBars[i-1]==1)
+        hcurr++;
+        else
+        hcurr=1;
+        hbar_cnt = Math.max(hbar_cnt,hcurr);
+       }
+       int vcurr=1;
+       for(int i =1;i<vBars.length;i++)
+       {
+        if(vBars[i]-vBars[i-1]==1)
+        vcurr++;
+        else 
+        vcurr=1;
+        vbar_cnt= Math.max(vcurr,vbar_cnt);
+       }
+       int ans = Math.min(vbar_cnt,hbar_cnt)+1;
+       return ans*ans;
+    }
+    }
