@@ -1,0 +1,29 @@
+class Solution {
+    public boolean judgeSquareSum(int c) {
+   //brute force approch
+   /*
+        for(int i =0;i<=c;i++)
+        {
+            for(int j =0;j<=c;j++)
+            {
+                if((i*i + j*j) == c)
+                return true;
+            }
+        }
+        return false; */
+
+        long l =0;
+        long r = (long) Math.sqrt(c);
+        while(l<=r)
+        {
+            long sum = l*l + r*r;
+            if(sum==c)
+            return true;
+            else if(sum<c)
+            l++;
+            else
+            r--;
+        }
+        return false;
+    }
+}
