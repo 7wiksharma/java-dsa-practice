@@ -1,0 +1,16 @@
+class Solution {
+    public boolean canAliceWin(int[] nums) {
+        int single=0;
+        int dou =0;
+        for(int x : nums)
+        {
+            if(x>=10)
+            dou = dou + x;
+            else 
+            single=single+x;
+        }
+        if(single==dou)
+        return false;
+        return true;
+    }
+}
