@@ -1,0 +1,46 @@
+class Solution {
+    public String reverseWords(String s) {
+       /* int count =0;
+        for(int i =0;i<s.length();i++)
+        {
+            if(s.charAt(i)!=' '){
+            count++;
+            }
+            else {
+                int r = count;
+                int l = 0;
+                while(r<l)
+                {
+                   char ch =  s.charAt(l);
+                   s.charAt(l) = s.charAt(r);
+                   s.charAt(r) = ch;
+                   r--;
+                   l++;
+
+                }
+                count =0;
+            }
+        
+        }
+        return s; */
+        char arr[] = s.toCharArray();
+        int start =0;
+        for(int i = 0;i<s.length();i++)
+        {
+              if(s.charAt(i)==' ' || i == arr.length-1 )
+              {
+                 int  r = (arr[i]==' ') ? i-1 : i;
+                   while(start<r)
+                   {
+                    char ch = arr[start];
+                    arr[start]=arr[r];
+                    arr[r]=ch;
+                    r--;
+                    start++;
+                   }
+                   start = i+1;
+              }
+        }
+return new String(arr);
+    }
+}
