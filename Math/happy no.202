@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isHappy(int n) {
+        Set<Integer> ans = new HashSet<>();
+        while(n!=1)
+        {
+            if(ans.contains(n)) return false;
+            ans.add(n);
+            n = helper(n);
+        }
+        return true;
+    }
+    public int helper(int n)
+    {
+        int sum = 0;
+        while(n>0)
+        {
+            int a = n%10;
+            sum = sum + a*a;
+            n=n/10;
+        }
+        return sum;
+
+    }
+}
