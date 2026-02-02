@@ -1,0 +1,32 @@
+class Solution {
+    public int countCharacters(String[] words, String chars) {
+        int [] chfreq = new int [26];
+        for(char ch: chars.toCharArray())
+        {
+            chfreq[ch-'a']++;
+        }
+
+int res =0;
+for(String word : words)
+{
+    int wo[] = new int[26];
+       
+       for(char ch: word.toCharArray())
+       {
+        wo[ch-'a']++;
+       }
+
+       boolean good = true;
+       for(int i =0;i<26;i++)
+       {
+        if(wo[i]>chfreq[i]){
+        good = false;
+        break;
+        }
+       }
+       if(good) res= res + word.length();
+}
+   return res;
+        
+    }
+}
