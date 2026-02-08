@@ -1,0 +1,16 @@
+
+public class Main
+{
+    public static void fx(int n,int a)
+    { 
+        if(a>n)
+        return;
+        System.out.print(a);
+        fx(n,a=a+1);
+    }
+	public static void main(String[] args) {
+             int a = 1;
+             fx(5,a);
+             
+	}
+}
