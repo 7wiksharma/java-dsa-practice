@@ -1,0 +1,26 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+    public  static int sum =0;
+    public static int sumoffirstnnaturalnumber(int n)
+    { 
+        if(n==0)
+         return sum;
+        sum = sum+n;
+        return sumoffirstnnaturalnumber(n-1);
+       
+    }
+	public static void main(String[] args) {
+          int ans =   sumoffirstnnaturalnumber(50);
+          System.out.print(ans);
+             
+             
+	}
+}
