@@ -1,43 +1,40 @@
-public class SelectionSort {
-    // Function to perform selection sort
-    public static void selectionSort(int[] arr) {
-        int n = arr.length;
+/******************************************************************************
 
-        // Traverse through all array elements
-        for (int i = 0; i < n - 1; i++) {
-            int minIndex = i; // Assume current index holds the minimum
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
 
-            // Find the minimum element in the remaining array
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j; // Update minIndex if smaller is found
+*******************************************************************************/
+
+public class Main
+{
+    public static void  selection(int arr[])
+    {
+       
+        for(int i =0;i<arr.length-1;i++)
+        {
+            int mini = i;
+            for(int j = i ;j<arr.length;j++)
+            {
+                if(arr[j]<arr[mini])
+                {
+                    mini =j;
                 }
             }
-
-            // Swap the found minimum element with the first element of unsorted part
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
+            int temp = arr[i];
+            arr[i]=arr[mini];
+            arr[mini] = temp;
+            
         }
-
-        // Print the sorted array
-        System.out.println("After selection sort:");
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
+        
     }
-
-    public static void main(String[] args) {
-        int[] arr = {13, 46, 24, 52, 20, 9};
-
-        // Print array before sorting
-        System.out.println("Before selection sort:");
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-
-        // Call selection sort
-        selectionSort(arr);
-    }
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		int arr[] = {13,11,4,22,1,77,5,9,1,6};
+		selection(arr);
+		for(int i =0;i<arr.length;i++)
+		{
+		    System.out.println(arr[i]);
+		}
+	}
 }
